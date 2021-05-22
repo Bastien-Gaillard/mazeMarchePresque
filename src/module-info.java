@@ -1,0 +1,3 @@
+module Labyrinthe {
+	requires libjcsi;
+}
