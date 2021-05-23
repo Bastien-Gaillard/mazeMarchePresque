@@ -8,9 +8,9 @@ import java.util.Random;
 import net.slashie.libjcsi.CSIColor;
 
 /**
-* Le niveau représente la carte d'un level du jeux. Elle contient
+* Le niveau reprÃ©sente la carte d'un level du jeux. Elle contient
 des cases qui sont les sprites de type mur par exemple
-* Et listeENtite qui sont les objets / créatures qui se trouvent
+* Et listeENtite qui sont les objets / crÃ©atures qui se trouvent
 dans le niveau
 * @author coupr
 */
@@ -47,7 +47,7 @@ public class Niveau {
 			}
 		}
 }
-	//Génération automatique d'un level avec des murs et des pommes aléatoire
+	//GÃ©nÃ©ration automatique d'un level avec des murs et des pommes alÃ©atoire
 //	public void generationAuto() {
 //		//Mur de contour et sol de base
 //		for(int i=Main.minX;i<Main.maxX-1;i++) {
@@ -179,19 +179,20 @@ public class Niveau {
 				x2 = x+1;
 
 				x = x + 2;
+				y2 = y;
 			} else if( r2 < 0.5){
 				x2 = x-1;
-
+				y2 = y;
 				x = x - 2;
-	} else if(r2 < 0.75) {
-		y2 = y-1;
-
+			} else if(r2 < 0.75) {
+				y2 = y + 1;
+				x2 = x;
 				y = y + 2; 
-	} else {
-		y2 = y-1;
-
+			} else {
+				y2 = y-1;
+				x2 = x;
 				y = y - 2;
-	}
+			}
 			if(x <= Main.minX ) {
 				x = Main.minX;
 			} else if( x >= Main.maxX) {
@@ -227,7 +228,7 @@ public class Niveau {
 				fin = fin + 1;
 				System.out.println(c);
 			} else {
-				System.out.println("D�ja visit�: "+c);
+				System.out.println("Déja visité: "+c);
 			}
 			c.affiche();
 			c2.affiche();
